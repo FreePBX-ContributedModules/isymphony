@@ -1,0 +1,1060 @@
+//Global variables---------------------------------------------------------------------------------
+$ISERROR
+If any function that is called within the API returns false $ISERROR will contain the last error that was thrown
+
+//Constructors-------------------------------------------------------------------------------------
+
+iSymphony($host)
+Create an iSymphony manager that communicates on the host or ip specified.
+Takes: the host or ip of the iSymphony server
+Returns: nothing.
+
+//Connection methods-------------------------------------------------------------------------------
+
+function iSymphonyConnect()
+Initializes connection to iSymphony server
+Takes: nothing
+Returns: true if successful or an error message if not
+
+
+function iSymphonyDisconnect()
+Disconnects from iSymphony server
+Takes: nothing
+Returns: nothing 
+
+
+//List methods-------------------------------------------------------------------------------------
+
+function getISymphonyLocationList()
+Gets list of locations
+Takes: nothing
+Returns: array containing the names of the locations 
+
+
+function getISymphonyTenantList($location)
+Gets list of tenants for a given location
+Takes: location name
+Returns: array containing the names of the tenants 
+
+
+function getISymphonyExtensionList($location, $tenant)
+Gets list of extensions for a given tenant
+Takes: location name, tenant name
+Returns: array containing the names of the extensions 
+
+
+function getISymphonyProfileList($location, $tenant)
+Gets list of profiles for a given tenant
+Takes: location name, tenant name
+Returns: array containing the names of the profiles 
+
+
+function getISymphonyQueueList($location, $tenant)
+Gets list of queues for a given tenant
+Takes: location name, tenant name
+Returns: array containing the names of the queues 
+
+
+function getISymphonyConferenceRoomList($location, $tenant)
+Gets list of conference rooms for a given tenant
+Takes: location name, tenant name
+Returns: array containing the names of the conference rooms 
+
+
+function getISymphonyStatusList($location, $tenant)
+Gets list of statuses for a given tenant
+Takes: location name, tenant name
+Returns: array containing the names of the statuses 
+
+
+function getISymphonyPermissionGroupList($location, $tenant)
+Gets list of permission groups for a given tenant
+Takes: location name, tenant name
+Returns: array containing the names of the permission groups 
+
+
+function getISymphonyPermissionGroupRemoteExtensionPermissionList($location, $tenant, $group)
+Gets list of remote extension permissions of a specified extension group
+Takes: location name, tenant name, permission group name
+Returns: array containing the names of the extensions included in the permission list  
+
+
+function getISymphonyPermissionGroupQueuePermissionList($location, $tenant, $group)
+Gets list of queue permissions of a specified extension group
+Takes: location name, tenant name, permission group name
+Returns: array containing the names of the queues included in the permission list  
+
+
+function getISymphonyPermissionGroupConferenceRoomPermissionList($location, $tenant, $group)
+Gets list of conference room permissions of a specified extension group
+Takes: location name, tenant name, permission group name
+Returns: array containing the names of the conference rooms included in the permission list  
+
+
+function getISymphonyOverrideRemoteExtensionPermissionList($location, $tenant, $profile)
+Gets list of remote extension permission overrides of a specified profile
+Takes: location name, tenant name, profile name
+Returns: array containing the names of the extensions included in the permission list  
+
+
+function getISymphonyOverrideQueuePermissionList($location, $tenant, $profile)
+Gets list of queue permission overrides of a specified profile
+Takes: location name, tenant name, profile name
+Returns: array containing the names of the queues included in the permission list  
+
+
+function getISymphonyOverrideConferenceRoomPermissionList($location, $tenant, $profile)
+Gets list of conference room permission overrides of a specified profile
+Takes: location name, tenant name, profile name
+Returns: array containing the names of the conference rooms included in the permission list  
+
+
+function getISymphonyProfileExtensionList($location, $tenant, $profile)
+Gets list of profile's managed extensions
+Takes: location name, tenant name, profile name
+Returns: array containing the extensions managed by the specified profile  
+
+
+function getISymphonyPermissionGroupMemberList($location, $tenant, $group)
+Gets list of permission group members
+Takes: location name, tenant name, permission group name
+Returns: array containing the permission group's member's  
+
+
+//Property class query methods---------------------------------------------------------------------
+
+function getISymphonyServer()
+Gets an object that represents the servers properties
+Takes: nothing
+Returns: an ISymphonyServer object or false if error occurred  
+
+ 
+function getISymphonyLocation($location)
+Gets an object that represents a location's properties
+Takes: location name
+Returns: an ISymphonyLocation object or false if error occurred  
+
+ 
+function getISymphonyTenant($location, $tenant)
+Gets an object that represents a tenant's properties
+Takes: location name, tenant name
+Returns: an ISymphonyTenant object or false if error occurred  
+
+ 
+function getISymphonyExtension($location, $tenant, $extension)
+Gets an object that represents an extensions's properties
+Takes: location name, tenant name, extension name
+Returns: an ISymphonyExtension object or false if error occurred  
+
+ 
+function getISymphonyProfile($location, $tenant, $profile)
+Gets an object that represents a profiles's properties
+Takes: location name, tenant name, profile name
+Returns: an ISymphonyProfile object or false if error occurred  
+
+
+function getISymphonyQueue($location, $tenant, $queue)
+Gets an object that represents a queues's properties
+Takes: location name, tenant name, queue name
+Returns: an ISymphonyQueue object or false if error occurred  
+ 
+
+function getISymphonyConferenceRoom($location, $tenant, $room)
+Gets an object that represents a conference room's properties
+Takes: location name, tenant name, room name
+Returns: an ISymphonyConferenceRoom object or false if error occurred  
+  
+
+function getISymphonyPermissionGroup($location, $tenant, $group)
+Gets an object that represents a permission groups's properties
+Takes: location name, tenant name, group name
+Returns: an ISymphonyPermissionGroup object or false if error occurred  
+ 
+
+function getISymphonyStatus($location, $tenant, $status)
+Gets an object that represents a status's properties
+Takes: location name, tenant name, status name
+Returns: an ISymphonyStatus object or false if error occurred  
+  
+
+function getISymphonyDefaultLocalPermissions()
+Gets an object that represents the default local permissions
+Takes: nothing
+Returns: an ISymphonyDefaultLocalPermission object or false if error occurred  
+
+
+function getISymphonyDefaultRemotePermissions()
+Gets an object that represents the default remote permissions
+Takes: nothing
+Returns: an ISymphonyDefaultRemotePermission object or false if error occurred  
+
+
+function getISymphonyDefaultParkPermissions()
+Gets an object that represents the default park permissions
+Takes: nothing
+Returns: an ISymphonyDefaultParkPermission object or false if error occurred  
+
+
+function getISymphonyDefaultQueuePermissions()
+Gets an object that represents the default queue permissions
+Takes: nothing
+Returns: an ISymphonyDefaultQueuePermission object or false if error occurred  
+ 
+
+function getISymphonyDefaultConferenceRoomPermissions()
+Gets an object that represents the default conference room permissions
+Takes: nothing
+Returns: an ISymphonyDefaultConferenceRoomPermission object or false if error occurred  
+
+
+function getISymphonyGroupLocalPermissions($location, $tenant, $group) 
+Gets an object that represents a group's local permissions
+Takes: location name, tenant name, group name
+Returns: an ISymphonyGroupLocalPermission object or false if error occurred  
+
+
+function getISymphonyGroupParkPermissions($location, $tenant, $group)
+Gets an object that represents a group's park permissions
+Takes: location name, tenant name, group name
+Returns: an ISymphonyGroupParkPermission object or false if error occurred  
+
+
+function getISymphonyGroupRemotePermissions($location, $tenant, $group, $extension) 
+Gets an object that represents a group remote extension permission set
+Takes: location name, tenant name, group name, extension name
+Returns: an ISymphonyGroupRemotePermission object or false if error occurred  
+
+
+function getISymphonyGroupQueuePermissions($location, $tenant, $group, $queue)
+Gets an object that represents a group queue permission set
+Takes: location name, tenant name, group name, queue name
+Returns: an ISymphonyGroupQueuePermission object or false if error occurred  
+
+
+function getISymphonyGroupConferenceRoomPermissions($location, $tenant, $group, $room) 
+Gets an object that represents a group conference room permission set
+Takes: location name, tenant name, group name, room name
+Returns: an ISymphonyGroupConferenceRoomPermission object or false if error occurred  
+
+
+function getISymphonyOverrideLocalPermissions($location, $tenant, $profile)
+Gets an object that represents a profiles's local override permissions
+Takes: location name, tenant name, profile name
+Returns: an ISymphonyOverrideLocalPermission object or false if error occurred  
+
+
+function getISymphonyOverrideParkPermissions($location, $tenant, $profile)
+Gets an object that represents a profiles's park override permissions
+Takes: location name, tenant name, profile name
+Returns: an ISymphonyOverrideParkPermission object or false if error occurred  
+
+
+function getISymphonyOverrideRemotePermissions($location, $tenant, $profile, $extension)
+Gets an object that represents a profile's remote extension permission set
+Takes: location name, tenant name, profile name, extension name
+Returns: an ISymphonyOverrideRemotePermission object or false if error occurred  
+
+
+function getISymphonyOverrideQueuePermissions($location, $tenant, $profile, $queue)
+Gets an object that represents a profile's queue permission set
+Takes: location name, tenant name, profile name, queue name
+Returns: an ISymphonyOverrideQueuePermission object or false if error occurred  
+
+
+function getISymphonyOverrideConferenceRoomPermissions($location, $tenant, $profile, $room)
+Gets an object that represents a profile's conference room permission set
+Takes: location name, tenant name, profile name, conference room name
+Returns: an ISymphonyOverrideQueuePermission object or false if error occurred  
+
+
+//Remove methods-----------------------------------------------------------------------------------
+
+function removeISymphonyLocation($location)
+Removes a location
+Takes: location name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyTenant($location, $tenant)
+Removes a tenant
+Takes: location name, tenant name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyExtension($location, $tenant, $extension)
+Removes an extension
+Takes: location name, tenant name, extension name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyProfile($location, $tenant, $profile)
+Removes a profile
+Takes: location name, tenant name, profile name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyQueue($location, $tenant, $queue)
+Removes a queue
+Takes: location name, tenant name, queue name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyConferenceRoom($location, $tenant, $room)
+Removes a conference room
+Takes: location name, tenant name, room name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyStatus($location, $tenant, $status)
+Removes a status
+Takes: location name, tenant name, status name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyPermissionGroup($location, $tenant, $group)
+Removes a permission group
+Takes: location name, tenant name, group name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyGroupRemotePermission($location, $tenant, $group, $extension)
+Removes a group remote permission
+Takes: location name, tenant name, group name, extension name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyGroupQueuePermission($location, $tenant, $group, $queue)
+Removes a group queue permission
+Takes: location name, tenant name, group name, queue name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyGroupConferenceRoomPermission($location, $tenant, $group, $room)
+Removes a group conference room permission
+Takes: location name, tenant name, group name, room name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyOverrideRemotePermission($location, $tenant, $profile, $extension)
+Removes a profile override remote permission
+Takes: location name, tenant name, profile name, extension name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyOverrideQueuePermission($location, $tenant, $profile, $queue)
+Removes a profile override queue permission
+Takes: location name, tenant name, profile name, queue name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyOverrideConferenceRoomPermission($location, $tenant, $profile, $room)
+Removes a profile override conference room permission
+Takes: location name, tenant name, profile name, queue name
+Returns: true if successful or false if error occurred  
+
+
+//License methods-----------------------------------------------------------------------------------
+
+function activateISymphonyLicense($location, $tenant, $serial)
+Activates a tenant license 
+Takes: location name, tenant name, serial
+Returns: true if successful or false if error occurred  
+
+
+function getISymphonyLicenseName($location, $tenant)
+Gets a name associated with a license
+Takes: location name, tenant name
+Returns: the license name if successful or false if error occurred  
+
+
+function getISymphonyLicenseClients($location, $tenant)
+Gets the number of clients of a licenses
+Takes: location name, tenant name
+Returns: the number of clients if successful or false if error occurred  
+
+
+function getISymphonyLicenseQueues($location, $tenant)
+Gets the number of queues of a licenses
+Takes: location name, tenant name
+Returns: the number of queues if successful or false if error occurred  
+
+
+function getISymphonyLicenseTrialDays($location, $tenant)
+Gets the number of trial days left of a licenses
+Takes: location name, tenant name
+Returns: the number of trial days left if successful or false if error occurred  
+
+ 
+//User status methods------------------------------------------------------------------------------
+
+function setISymphonyExtensionStatus($location, $tenant, $extension, $status)
+Sets an extension's status
+Takes: location name, tenant name, extension name, status
+Returns: true if successful or false if error occurred  
+
+
+function setISymphonyExtensionNote($location, $tenant, $extension, $note)
+Sets an extension's status note
+Takes: location name, tenant name, extension name, note
+Returns: true if successful or false if error occurred  
+ 
+
+function setISymphonyExtensionReturnTime($location, $tenant, $extension, $returntime)
+Sets an extension's return time
+Takes: location name, tenant name, extension name, time(unix time stamp)
+Returns: true if successful or false if error occurred  
+
+
+function getISymphonyExtensionStatus($location, $tenant, $extension) 
+Gets an extension's status
+Takes: location name, tenant name, extension name
+Returns: the status name if successful or false if error occurred  
+
+
+function getISymphonyExtensionNote($location, $tenant, $extension)
+Gets an extension's status note
+Takes: location name, tenant name, extension name
+Returns: the note if successful or false if error occurred  
+
+
+function getISymphonyExtensionReturnTime($location, $tenant, $extension)
+Gets an extension's returnTime
+Takes: location name, tenant name, extension name
+Returns: the return time as a unix time stamp if successful or false if error occurred  
+
+
+//Profile managed extension methods----------------------------------------------------------------
+
+function addISymphonyProfileManagedExtension($location, $tenant, $profile, $extension
+Adds an extension to a profile's managed list
+Takes: location name, tenant name, profile name, extension name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyProfileManagedExtension($location, $tenant, $profile, $extension)
+Removes an extension from a profile's managed list
+Takes: location name, tenant name, profile name, extension name
+Returns: true if successful or false if error occurred  
+
+
+//Permission group member methods------------------------------------------------------------------
+
+function addISymphonyPermissionGroupMember($location, $tenant, $group, $profile)
+Adds a profile to a permission group's member list
+Takes: location name, tenant name, permission group name, profile name
+Returns: true if successful or false if error occurred  
+
+
+function removeISymphonyPermissionGroupMember($location, $tenant, $group, $profile)
+Removes a profile from a permission group's member list
+Takes: location name, tenant name, permission group name, profile name
+Returns: true if successful or false if error occurred  
+
+
+//Server methods-----------------------------------------------------------------------------------
+
+function getiSymphonyServerVersion()
+Gets the server version
+Takes: nothing
+Returns: server version if successful or false if error occurred  
+
+
+function shutdownISymphonyServer()
+Shutdown the iSymphony server
+Takes: nothing
+Returns: nothing
+
+
+function reloadISymphonyServer()
+Reload the iSymphony server
+Takes: nothing
+Returns: nothing
+
+
+function reloadISymphonyLocation($location)
+Reload a location
+Takes: location name
+Returns: true if successful or false if error occurred 
+
+
+function getiSymphonyLocationConnectionStatus($location)
+Gets a locations Asterisk connection status
+Takes: location name
+Returns: connection status if successful or false if error occurred  
+
+
+function checkForiSymphonyUpdates()
+Checks for avaliable software updates
+Takes: nothing
+Returns: "Update Available: <version>" if an update is available, 
+		 "No Update Available" if there is no update available, and 
+		 false if an error occurred    
+
+
+function iSymphonyUpdate()
+Perform software updates
+Takes: nothing
+Returns: nothing
+
+
+iSymphonyCancelUpdate()
+Cancel currently running update
+Takes: nothing
+Returns: nothing
+
+
+function iSymphonyGetUpdateState()
+Get current update state
+Takes: nothing
+Returns: an instance of ISymphonyUpdateState which describes the current state of an update or false if an error occurred. See ISymphonyUpdateState class definition for more detail.  
+
+
+//Permission override activation methods-----------------------------------------------------------
+
+function activateISymphonyLocalOverridePermissions($location, $tenant, $profile)
+Activates a profile's local permission overrides
+Takes: location name, tenant name, profile name
+Returns: true if successful or false if error occurred 
+
+
+function deactivateISymphonyLocalOverridePermissions($location, $tenant, $profile)
+Deactivates a profile's local permission overrides
+Takes: location name, tenant name, profile name
+Returns: true if successful or false if error occurred 
+
+
+function activateISymphonyParkOverridePermissions($location, $tenant, $profile)
+Activates a profile's park permission overrides
+Takes: location name, tenant name, profile name
+Returns: true if successful or false if error occurred 
+
+
+function deactivateISymphonyParkOverridePermissions($location, $tenant, $profile)
+Deactivates a profile's park permission overrides
+Takes: location name, tenant name, profile name
+Returns: true if successful or false if error occurred 
+
+
+//Property classes---------------------------------------------------------------------------------
+
+class ISymphonyServer
+Class that represents the server properties
+Attributes: 
+	client_port: Port that server listens for client connections on.(INTEGER)
+	cli_port: Port that servers listens for CLI requests on.(INTEGER)
+	http_port: Port used for embedded http server.(INTEGER)
+	username: Admin username.(STRING)
+	password: Admin password.(STRING)
+	update_site_url: URL used for updates.(INTEGER)
+	hold_extension_button_enabled: Enable hold button.(BOOLEAN[true or false])
+	park_extension_button_enabled: Enable park button.(BOOLEAN[true or false])
+	record_extension_button_enabled: Enable record button.(BOOLEAN[true or false])
+	hangup_extension_button_enabled: Enable hangup button.(BOOLEAN[true or false])
+	cell_phone_extension_button_enabled: Enable cell phone button.(BOOLEAN[true or false])
+	voice_mail_extension_button_enabled: Enable voice mail button.(BOOLEAN[true or false])
+	agent_extension_button_enabled: Enable agent button.(BOOLEAN[true or false])
+	email_extension_button_enabled: Enable email button.(BOOLEAN[true or false])
+	chat_extension_button_enabled: Enable chat button.(BOOLEAN[true or false])
+	mute_extension_button_enabled: Enable mute button.(BOOLEAN[true or false])
+	barge_extension_button_enabled: Enable barge button.(BOOLEAN[true or false])
+	do_not_disturb_extension_button_enabled: Enable DND button.(BOOLEAN[true or false])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+
+class ISymphonyLocation
+Class that represents a locations's properties
+Attributes: 
+	name: Location name(STRING)
+	admin_password: Admin password(STRING)
+	asterisk_host: Asterisk manager host name or IP(STRING)
+	asterisk_port: Asterisk manager port(INTEGER)
+	asterisk_login: Asterisk manager username(STRING)
+	asterisk_password: Asterisk manager password(STRING)
+	originate_timeout: Amount of time an originator will be rung on an origination event in milliseconds(INTEGER)
+	jabber_host: Jabber host name(STRING)
+	jabber_domain: Jabber domain name(STRING)
+	jabber_resource: Jabber resource name(STRING)
+	jabber_port: Jabber port(INTEGER)
+	mask_jabber_user_name_with_profile: Overwrite display of Jabber usernames with configured profile names.(BOOLEAN[true or false])
+	log_jabber_messages: If set to true all jabber conversations will be logged on the server.(BOOLEAN[true or false])
+	device_user_mode: Handle user device mappings when in FreePBX Device User Mode.(BOOLEAN[true or false])
+	reload_on_dial_plan_reload: Flag used to reload this location when the dial plan reloads.(BOOLEAN[true or false])
+	force_client_update: If set to true users will not be prompted for update authorization.(BOOLEAN[true or false])
+	voice_mail_directory: Root directory where voice mail files are stored.(STRING)
+	use_voice_mail_agent: Flag specify if the server should use the local file system or a voice mail agent to server voicemail.(BOOLEAN[true or false])
+	voice_mail_agent_host: Host or IP of voice mail agent server.(STRING)
+	voice_mail_agent_port: Port of voice mail agent server.(INTEGER)
+	voice_mail_agent_user_name: Username of voice mail agent server.(STRING)
+	voice_mail_agent_password: Password of voice mail agent server.(STRING)
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given location with specified configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+
+class ISymphonyTenant
+Class that represents a tenants's properties
+Attributes: 
+	name: Name of the tenant(STRING)
+	admin_password: Admin password(STRING)
+	originating_context: Context used for originating calls(STRING)
+	redirecting_context: Context used for redirecting calls(STRING)
+	music_on_hold_class: Music on hold class(STRING)
+	record_file_name: File name used for recorded calls. See code legend in administration interface for a list of input variables(STRING)
+	record_file_extension: File extensions used for recorded calls(STRING)
+	mix_mode: Flag used to mix incoming and outgoing recorded call channels(BOOLEAN[true or false])
+	page_status_enabled: Flag used to enable page status(BOOLEAN[true or false])
+	page_context: Page context used to suppress paging status(STRING)
+	outside_line_number: Number used to dial outside numbers(STRING)
+	ringing_status_enabled: Flag used to specify if ringing status should be enabled(BOOLEAN[true or false])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given tenant with specified configuration
+		Takes: the location you wish to add the tenant to
+		Returns: true if successful false if not
+
+ 
+class ISymphonyExtension
+Class that represents an extension's properties
+Attributes: 
+	extension_val: Extension number(STRING)
+	name: Extension display name(STRING)
+	cell_phone: Cell phone number(STRING)
+	email: Email address(STRING)
+	peer: Peer associated with this extension(STRING)
+	alt_origination_method: Alternate method for originating calls if it differers from the peer(STRING)
+	voice_mail: Voice mail box number of this extension(STRING)
+	voice_mail_context: Voice mail box context of this extension(STRING)
+	originating_context: Originating context override(STRING)
+	redirecting_context: Redirecting context override(STRING)
+	agent_login_context: Agent login context override(STRING)
+	agent_login_interface: Dynamic agent login state interface(STRING)
+	agent_login_penalty: Dynamic agent login penalty(INTEGER)
+	music_on_hold_class: Music on hold class override(STRING)
+	agent: Agent number associated with this extension(STRING)
+	auto_answer: Flag used to indicate if origination call back should be auto answered.
+	agent_login_name: specifies the name used for a dynamic agent login(STRING)
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given tenant with specified configuration
+		Takes: the location you wish to add the extension to, the tenant that you would like to add the extension to
+		Returns: true if successful false if not
+
+ 
+class ISymphonyProfile
+Class that represents a profile's properties
+Attributes: 
+	name: Username for profile(STRING)
+	password: Password for profile(STRING)
+	jabber_host: Jabber host name(STRING)
+	jabber_domain: Jabber domain name(STRING)
+	jabber_resource: Jabber resource name(STRING)
+	jabber_port: Jabber port(INTEGER)
+	jabber_user_name: Jabber username(STRING)
+	jabber_password: Jabber password(STRING)
+	can_view_everyone_directory: Flag that allows this profile to see the Everyone directory(BOOLEAN[true or false])
+	unregistered_color: Sets the unregistered color.(RGB)
+	registered_color: Sets the registered color.(RGB)
+	ringing_color: Sets the ringing color.(RGB)
+	pending_color: Sets the pending color.(RGB)
+	local_linked_color: Sets the local linked color.(RGB)
+	outside_linked_color: Sets the outside linked color.(RGB)
+	queue_linked_color: Sets the queue linked color.(RGB)
+	chan_spy_barge: Sets the usage of ChanSpy to perform barges.(BOOLEAN[true or false])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given profile with specified configuration
+		Takes: the location you wish to add the profile to, the tenant that you would like to add the profile to
+		Returns: true if successful false if not
+
+
+class ISymphonyQueue
+Class that represents a queue's properties
+Attributes: 
+	name: Display name of queue(STRING)
+	queue_val: Name of queue as defined in queues.conf(STRING)
+	extension_val: Extension used to access queue(STRING)
+	context: Context used to access queue(STRING)
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given queue with specified configuration
+		Takes: the location you wish to add the queue to, the tenant that you would like to add the queue to
+		Returns: true if successful false if not
+
+ 
+class ISymphonyConferenceRoom
+Class that represents a conference room's properties
+Attributes: 
+	name: Display name of conference room(STRING)
+	predefined: Flag describing if this is a predefined or custom room(BOOLEAN[true or false])
+	room_number: Room number for predefined room as it appears in meetme.conf(STRING)
+	extension_val: Extension used to access predefined room(STRING)
+	context: Context used to access predefined room(STRING)
+	announce_user_count: Custom room option to turn on/off announcing user count to entering users(BOOLEAN[true or false])
+	music_on_hold_for_single_user: Custom room option to turn on/off music on hold when a single user is in a room(BOOLEAN[true or false])
+	exit_room_via_pound: Custom room option to turn on/off the ability for users to exit the room via the # key(BOOLEAN[true or false])
+	present_menu_via_star: Custom room option to turn on/off the ability for users to be presented a menu via thekey(BOOLEAN[true or false])
+	announce_user_join_leave: Custom room option to turn on/off the ability to announce the name of incoming users.
+	disable_join_leave_notification: Custom room option to turn on/off a chime notification of entering and exiting users.
+	record: Custom room option to turn on/off recording of a room.
+	peer_originate: Flag specifying if originations to this conference room should utilize the raw peer.(BOOLEAN[true or false])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given conference room with specified configuration
+		Takes: the location you wish to add the conference room to, the tenant that you would like to add the conference room to
+		Returns: true if successful false if not
+
+
+class ISymphonyPermissionGroup
+Class that represents a permission group's properties
+Attributes: 
+	name: Name of permission group(STRING)
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission group with specified configuration
+		Takes: the location you wish to add the permission group to, the tenant that you would like to add the permission group to
+		Returns: true if successful false if not
+
+ 
+class ISymphonyStatus
+Class that represents a status's properties
+Attributes: 
+	name: Name of status(STRING)
+	type: Type of status(TYPE[available,unavailable,out])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given status with specified configuration
+		Takes: the location you wish to add the status to, the tenant that you would like to add the status to
+		Returns: true if successful false if not
+
+ 
+class ISymphonyDefaultLocalPermission
+Class that represents the default local permissions
+Attributes: 
+	call_voice_mail: Allows users to call there own extension's voice mail(BOOLEAN[allow or deny])
+	hold_calls: Allows users to place their calls on hold(BOOLEAN[allow or deny])
+	transfer_call_to_voice_mail: Allows users to transfer call to their voice mail(BOOLEAN[allow or deny])
+	mute: Allows users to mute/unmute themselves when in a conference room or barged call(BOOLEAN[allow or deny])
+	record: Allows users to record their calls(BOOLEAN[allow or deny])
+	hangup: Allows users to hangup their calls via the panel(BOOLEAN[allow or deny])
+	set_user_status_note: Allows users to set their status notes and return time(BOOLEAN[allow or deny])	
+	call_cell_phone: Allows users to call their cell phone(BOOLEAN[allow or deny])
+	add_extension_directory: Allows users to add extension directories(BOOLEAN[allow or deny])	
+	set_user_status: Allows users to set their status(BOOLEAN[allow or deny])
+	transfer_call_to_cell_phone: Allows users to transfer calls to their cell phone(BOOLEAN[allow or deny])
+	agent_login: Allows users to login/logout of their agent via the panel(BOOLEAN[allow or deny])
+	add_temp_meetme_room: Allows users to create temporary conference rooms BOOLEAN[allow or deny]
+	listen_to_voice_mail: Allows users to listen to their voice mail(BOOLEAN[allow or deny])
+	delete_voice_mail: Allows users to delete their voice mail(BOOLEAN[allow or deny])
+	move_voice_mail: Allows users to move their voice mail(BOOLEAN[allow or deny])
+	pause_member: Allows users to pause themselves in a queue(BOOLEAN[allow or deny])
+	do_not_disturb: Allows user to place the extension in DND(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+    
+ 
+class ISymphonyDefaultRemotePermission
+Class that represents the default remote permissions
+Attributes: 
+	call_voice_mail: Allows user to call remote extension voice mail(BOOLEAN[allow or deny])
+	transfer_to: Allows users to transfer calls to remote extensions(BOOLEAN[allow or deny])
+	transfer_call_to_voice_mail: Allows users to transfer calls to remote extension voice mail(BOOLEAN[allow or deny])
+	steal_call: Allows users to steal calls from remote extensions(BOOLEAN[allow or deny])
+	record: Allows users to record remote extension calls(BOOLEAN[allow or deny])	
+	originate_to: Allows users to originate calls to remote extensions via the panel(BOOLEAN[allow or deny])
+	email: Allows users to email remote extensions(BOOLEAN[allow or deny])	
+	call_cell_phone: Allows users to call remote extension cell phones(BOOLEAN[allow or deny])
+	barge: Allows users to barge in on remote extension calls(BOOLEAN[allow or deny])
+	transfer_call_to_cell_phone: Allows users to transfer calls to remote extension voice mail(BOOLEAN[allow or deny])
+	chat: Allows users to initiate chat sessions with remote extensions(BOOLEAN[allow or deny])
+	agent_login: Allows users to login/logout remote extension agents(BOOLEAN[allow or deny])	
+	view_calls: Allows users to see remote extension call status(BOOLEAN[allow or deny])	
+	view_caller_id: Allows users to see remote extension callerID(BOOLEAN[allow or deny])
+	forward_voice_mail_to: Allows users to forward voice mail to remote extensions(BOOLEAN[allow or deny])
+	set_user_status: Allows users to set extension status(BOOLEAN[allow or deny])
+	set_user_status_note: Allows users to set extension status note and return time(BOOLEAN[allow or deny])
+	pause_member: Allows users to pause extension's agent in queue(BOOLEAN[allow or deny])
+	do_not_disturb: Allows user to place the extension in DND(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+
+class ISymphonyDefaultParkPermission
+Class that represents the default park permissions
+Attributes: 
+	park_call: Allows users to park calls(BOOLEAN[allow or deny])
+	set_parked_call_note: Allows users to set parked call notes(BOOLEAN[allow or deny])
+	unpark_call: Allows users to take calls from the parking lot via the panel(BOOLEAN[allow or deny])
+
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+  
+ 
+class ISymphonyDefaultQueuePermission
+Class that represents the default queue permissions
+Attributes: 
+	transfer_to: Allows users to transfer calls to a queue(BOOLEAN[allow or deny])
+	steal_call: Allows users to steal calls from a queue(BOOLEAN[allow or deny])
+	dynamic_login: Allows users to log into queue dynamically (BOOLEAN[allow or deny])
+	display: Allows users to view this queue (BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+ 
+class ISymphonyDefaultConferenceRoomPermission
+Class that represents the default conference room permissions
+Attributes: 
+	steal_call: Allows users to steal calls from conference rooms(BOOLEAN[allow or deny])
+	transfer_to: Allows users to transfer calls to conference rooms(BOOLEAN[allow or deny])
+	originate_to: Allows users to originate calls to a conference room(BOOLEAN[allow or deny])
+	mute_users: Allows users to mute conference room users(BOOLEAN[allow or deny])
+	kick_users: Allows users to kick conference room users from the room(BOOLEAN[allow or deny])
+	display: Allows users to view this conference room (BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+    
+class ISymphonyGroupLocalPermission
+Class that represents a group's local permissions
+Attributes: 
+	call_voice_mail: Allows users to call there own extension's voice mail(BOOLEAN[allow or deny])
+	hold_calls: Allows users to place their calls on hold(BOOLEAN[allow or deny])
+	transfer_call_to_voice_mail: Allows users to transfer call to their voice mail(BOOLEAN[allow or deny])
+	mute: Allows users to mute/unmute themselves when in a conference room or barged call(BOOLEAN[allow or deny])
+	record: Allows users to record their calls(BOOLEAN[allow or deny])
+	hangup: Allows users to hangup their calls via the panel(BOOLEAN[allow or deny])
+	set_user_status_note: Allows users to set their status notes and return time(BOOLEAN[allow or deny])	
+	call_cell_phone: Allows users to call their cell phone(BOOLEAN[allow or deny])
+	add_extension_directory: Allows users to add extension directories(BOOLEAN[allow or deny])	
+	set_user_status: Allows users to set their status(BOOLEAN[allow or deny])
+	transfer_call_to_cell_phone: Allows users to transfer calls to their cell phone(BOOLEAN[allow or deny])
+	agent_login: Allows users to login/logout of their agent via the panel(BOOLEAN[allow or deny])
+	add_temp_meetme_room: Allows users to create temporary conference rooms BOOLEAN[allow or deny]
+	listen_to_voice_mail: Allows users to listen to their voice mail(BOOLEAN[allow or deny])
+	delete_voice_mail: Allows users to delete their voice mail(BOOLEAN[allow or deny])
+	move_voice_mail: Allows users to move their voice mail(BOOLEAN[allow or deny])
+	pause_member: Allows users to pause themselves in a queue(BOOLEAN[allow or deny])
+	do_not_disturb: Allows user to place the extension in DND(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+  
+ 
+class ISymphonyGroupParkPermission
+Class that represents a group's park permissions
+Attributes: 
+	park_call: Allows users to park calls(BOOLEAN[allow or deny])
+	set_parked_call_note: Allows users to set parked call notes(BOOLEAN[allow or deny])
+	unpark_call: Allows users to take calls from the parking lot via the panel(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+ 
+class ISymphonyGroupRemotePermission
+Class that represents a specified group remote permission set
+Attributes: 
+	call_voice_mail: Allows user to call remote extension voice mail(BOOLEAN[allow or deny])
+	transfer_to: Allows users to transfer calls to remote extensions(BOOLEAN[allow or deny])
+	transfer_call_to_voice_mail: Allows users to transfer calls to remote extension voice mail(BOOLEAN[allow or deny])
+	steal_call: Allows users to steal calls from remote extensions(BOOLEAN[allow or deny])
+	record: Allows users to record remote extension calls(BOOLEAN[allow or deny])	
+	originate_to: Allows users to originate calls to remote extensions via the panel(BOOLEAN[allow or deny])
+	email: Allows users to email remote extensions(BOOLEAN[allow or deny])	
+	call_cell_phone: Allows users to call remote extension cell phones(BOOLEAN[allow or deny])
+	barge: Allows users to barge in on remote extension calls(BOOLEAN[allow or deny])
+	transfer_call_to_cell_phone: Allows users to transfer calls to remote extension voice mail(BOOLEAN[allow or deny])
+	chat: Allows users to initiate chat sessions with remote extensions(BOOLEAN[allow or deny])
+	agent_login: Allows users to login/logout remote extension agents(BOOLEAN[allow or deny])	
+	view_calls: Allows users to see remote extension call status(BOOLEAN[allow or deny])	
+	view_caller_id: Allows users to see remote extension callerID(BOOLEAN[allow or deny])
+	forward_voice_mail_to: Allows users to forward voice mail to remote extensions(BOOLEAN[allow or deny])
+	set_user_status: Allows users to set extension status(BOOLEAN[allow or deny])
+	set_user_status_note: Allows users to set extension status note and return time(BOOLEAN[allow or deny])
+	pause_member: Allows users to pause extension's agent in queue(BOOLEAN[allow or deny])
+	do_not_disturb: Allows user to place the extension in DND(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission with specified configuration
+		Takes: location, tenant, permission group, extension
+		Returns: true if successful false if not
+  
+ 
+class ISymphonyGroupQueuePermission
+Class that represents a specified group queue permission set
+Attributes: 
+	transfer_to: Allows users to transfer calls to a queue(BOOLEAN[allow or deny])
+	steal_call: Allows users to steal calls from a queue(BOOLEAN[allow or deny])
+	dynamic_login: Allows users to log into queue dynamically (BOOLEAN[allow or deny])
+	display: Allows users to view this queue (BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission with specified configuration
+		Takes: location, tenant, permission group, queue
+		Returns: true if successful false if not
+
+ 
+class ISymphonyGroupConferenceRoomPermission
+Class that represents a specified group conference room permission set
+Attributes: 
+	steal_call: Allows users to steal calls from conference rooms(BOOLEAN[allow or deny])
+	transfer_to: Allows users to transfer calls to conference rooms(BOOLEAN[allow or deny])
+	originate_to: Allows users to originate calls to a conference room(BOOLEAN[allow or deny])
+	mute_users: Allows users to mute conference room users(BOOLEAN[allow or deny])
+	kick_users: Allows users to kick conference room users from the room(BOOLEAN[allow or deny])
+	display: Allows users to view this conference room (BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission with specified configuration
+		Takes: location, tenant, permission group, room
+		Returns: true if successful false if not
+ 
+ 
+class ISymphonyOverrideLocalPermission
+Class that represents a profile's local override permissions
+Attributes: 
+	call_voice_mail: Allows users to call there own extension's voice mail(BOOLEAN[allow or deny])
+	hold_calls: Allows users to place their calls on hold(BOOLEAN[allow or deny])
+	transfer_call_to_voice_mail: Allows users to transfer call to their voice mail(BOOLEAN[allow or deny])
+	mute: Allows users to mute/unmute themselves when in a conference room or barged call(BOOLEAN[allow or deny])
+	record: Allows users to record their calls(BOOLEAN[allow or deny])
+	hangup: Allows users to hangup their calls via the panel(BOOLEAN[allow or deny])
+	set_user_status_note: Allows users to set their status notes and return time(BOOLEAN[allow or deny])	
+	call_cell_phone: Allows users to call their cell phone(BOOLEAN[allow or deny])
+	add_extension_directory: Allows users to add extension directories(BOOLEAN[allow or deny])	
+	set_user_status: Allows users to set their status(BOOLEAN[allow or deny])
+	transfer_call_to_cell_phone: Allows users to transfer calls to their cell phone(BOOLEAN[allow or deny])
+	agent_login: Allows users to login/logout of their agent via the panel(BOOLEAN[allow or deny])
+	add_temp_meetme_room: Allows users to create temporary conference rooms BOOLEAN[allow or deny]
+	listen_to_voice_mail: Allows users to listen to their voice mail(BOOLEAN[allow or deny])
+	delete_voice_mail: Allows users to delete their voice mail(BOOLEAN[allow or deny])
+	move_voice_mail: Allows users to move their voice mail(BOOLEAN[allow or deny])
+	pause_member: Allows users to pause themselves in a queue(BOOLEAN[allow or deny])
+	do_not_disturb: Allows user to place the extension in DND(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+
+class ISymphonyOverrideParkPermission
+Class that represents a profile's park override permissions
+Attributes: 
+	park_call: Allows users to park calls(BOOLEAN[allow or deny])
+	set_parked_call_note: Allows users to set parked call notes(BOOLEAN[allow or deny])
+	unpark_call: Allows users to take calls from the parking lot via the panel(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+  
+
+class ISymphonyOverrideRemotePermission
+Class that represents a profile's specified remote override permission set
+Attributes: 
+	call_voice_mail: Allows user to call remote extension voice mail(BOOLEAN[allow or deny])
+	transfer_to: Allows users to transfer calls to remote extensions(BOOLEAN[allow or deny])
+	transfer_call_to_voice_mail: Allows users to transfer calls to remote extension voice mail(BOOLEAN[allow or deny])
+	steal_call: Allows users to steal calls from remote extensions(BOOLEAN[allow or deny])
+	record: Allows users to record remote extension calls(BOOLEAN[allow or deny])	
+	originate_to: Allows users to originate calls to remote extensions via the panel(BOOLEAN[allow or deny])
+	email: Allows users to email remote extensions(BOOLEAN[allow or deny])	
+	call_cell_phone: Allows users to call remote extension cell phones(BOOLEAN[allow or deny])
+	barge: Allows users to barge in on remote extension calls(BOOLEAN[allow or deny])
+	transfer_call_to_cell_phone: Allows users to transfer calls to remote extension voice mail(BOOLEAN[allow or deny])
+	chat: Allows users to initiate chat sessions with remote extensions(BOOLEAN[allow or deny])
+	agent_login: Allows users to login/logout remote extension agents(BOOLEAN[allow or deny])	
+	view_calls: Allows users to see remote extension call status(BOOLEAN[allow or deny])	
+	view_caller_id: Allows users to see remote extension callerID(BOOLEAN[allow or deny])
+	forward_voice_mail_to: Allows users to forward voice mail to remote extensions(BOOLEAN[allow or deny])
+	set_user_status: Allows users to set extension status(BOOLEAN[allow or deny])
+	set_user_status_note: Allows users to set extension status note and return time(BOOLEAN[allow or deny])
+	pause_member: Allows users to pause extension's agent in queue(BOOLEAN[allow or deny])
+	do_not_disturb: Allows user to place the extension in DND(BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission with specified configuration
+		Takes: location, tenant, profile, extension
+		Returns: true if successful false if not
+  
+ 
+class ISymphonyOverrideQueuePermission
+Class that represents a profile's specified override queue permission set
+Attributes: 
+	transfer_to: Allows users to transfer calls to a queue(BOOLEAN[allow or deny])
+	steal_call: Allows users to steal calls from a queue(BOOLEAN[allow or deny])
+	dynamic_login: Allows users to log into queue dynamically (BOOLEAN[allow or deny])
+	display: Allows users to view this queue (BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission with specified configuration
+		Takes: location, tenant, profile, queue
+		Returns: true if successful false if not
+
+ 
+class ISymphonyOverrideConferenceRoomPermission
+Class that represents a profile's specified override conference room permission set
+Attributes: 
+	steal_call: Allows users to steal calls from conference rooms(BOOLEAN[allow or deny])
+	transfer_to: Allows users to transfer calls to conference rooms(BOOLEAN[allow or deny])
+	originate_to: Allows users to originate calls to a conference room(BOOLEAN[allow or deny])
+	mute_users: Allows users to mute conference room users(BOOLEAN[allow or deny])
+	kick_users: Allows users to kick conference room users from the room(BOOLEAN[allow or deny])
+	display: Allows users to view this conference room (BOOLEAN[allow or deny])
+Methods:
+	update: Commits changes made to the property configuration
+		Takes: nothing
+		Returns: true if successful false if not
+	add: Adds the given permission with specified configuration
+		Takes: location, tenant, profile, room
+		Returns: true if successful false if not
+		
+class ISymphonyUpdateState
+Class that represents the current update state
+Attributes: 
+	task: the current task state flag of the update. Values are [NONE, CHECKING_FOR_UPDATES, UPDATE_AVAILABLE, NO_UPDATE_AVAILABLE, DOWNLOADING, DECOMPRESSING, READY_TO_INSTALL, INSTALLING, ERROR](STRING)
+	message: detail for the specified task(STRING)
+	work: total work required for the current task(INTEGER)
+	work_done: work completed for the current task(INTEGER)
+Methods:

@@ -1,0 +1,110 @@
+<module>
+	<rawname>isymphony</rawname>
+	<name>iSymphony</name>
+	<version>1.4.8</version>
+	<type>setup</type>
+	<repo>unsupported</repo>
+	<license>GPL</license>
+	<category>Admin</category>
+	<description>
+		This module automatically configures iSymphony to reflect the FreePBX configuration.
+	</description>
+	<menuitems>
+		<isymphony>iSymphony</isymphony>
+		<isymphony_menu category="reports" requires_auth="false" target="_blank" access="all">iSymphony Panel</isymphony_menu>
+	</menuitems>
+	<depends>
+		<version>>=2.3.0</version>
+	</depends>
+	<location>junk</location>
+	<md5sum>junk</md5sum>
+	<changelog>
+		1.4.8 Added client launch menu item to administration menu.
+		1.4.7 Module now configures the server to perform originations through a proxy context in order to strip the CC_RECALL variable from the destination leg of the call.
+		1.4.6 FreePBX config object is now pulled from the create method.
+			  The event when called and member status event flags on a queue will now be set automatically if the panel add option is selected on the queue.
+		1.4.5 The manager entry is now created in FreePBX 2.10.
+		1.4.4 Fixed bug in which FreePBX systems of 2.9 and below would throw an index error while running modilfy.php.
+			  Fixed bug which would cause the call to preg_replace to error out.
+		1.4.3 Modify.php now performs FreePBX boot strapping for security checks when using FreePBX 2.10 or higher.
+			  Spaces in Jabber user names are now masked with "_".
+		1.4.2 Fixed bug that prevented extensions from inserting into the table when using FreePBX 2.10.
+		1.4.1 Landing page now forwards the location and tenant value to the client JNLP launch script in order to auto populate the client profile connection fields.
+		1.4.0 Client serve port can now be specified for launching of the client on version 2.4 or higher.
+			  Forwarding script added in order to forward users to the client server.
+			  Fixed issue where the webroot was hard coded and may have been invalid on some systems.
+			  Fixed issue where modify.php would block on a socket read indefinitely.
+		1.3.3 Properly formated announce channel in ParkAndAnounce call for Asterisk 1.8.
+			  Fixed bug which would cause settings made in the iSymphony module page to not show the update values after submit.
+		1.3.2 Fixed bug that would cause the web root set to fail on install of the module on a FreePBX system below 2.9.
+		1.3.1 Fixed bug that would cause the modify.php file to never release its lock.
+			  Operator panel web root now set on installation.
+		1.3.0 Modification of iSymphony is now performed asynchronously so as not to block the FreePBX reload process.
+			  The script execution timeout is now dynamically determined based on the number of extensions configured.
+		1.2.0 Added ability to define host, tenant, location, and asterisk host for management of remote systems.
+			  Moved menu item to Admin section.
+		1.0.19 Module page now determines server status via a successful connection to the CLI instead of the server process list.
+		1.0.18 Included new php library that contains a fix for server set defaults during addition of elements.
+		1.0.17 Agent login name is now set to the display name of the relative extension.
+			   Fixed bug in which the agent login hint CLI value was set to "Hint: (interface)" as opposed to "Hint:(interface)"
+		1.0.16 Agent interface is now set depending on Asterisk version and Device and Queue state patches.
+		1.0.15 Modified dial plan includes to use the , delimiter in dial plan commands instead of |.
+		1.0.14 Added context support for ChanSpy barge.
+		1.0.13 Added initial configuration build running time improvements.
+        1.0.12 Added announcement answer context for ParkAndAnnounce call so that we conform to requirement that all values must now be defined in the call to ParkAndAnnounce.
+        1.0.11 Added support for agent login state interface.
+        1.0.10 Added support for generic internal channel variable names.
+        1.0.9 Added ability to update module tables during an upgrade.
+        1.0.8 Added support for new generic internal contexts.
+		1.0.7 Added support for Log Chat flag.
+        1.0.6 Included new PHP API library.
+        1.0.5 Modified recorded call mask to include %LINKED_ID% for more robust integration with ARI CDR mapping.
+        1.0.4 Added support for the new agent callback context in FreePBX 2.6
+	    1.0.3 Modified manager.conf include to provide all privileges to clients allowing the server to read all events and execute all actions provided in Asterisk 1.6.
+	    1.0.2 Modified dial plan includes to utilize Asterisk 1.6 constraints.
+        1.0.1 Recorded call file mask will now be set to the appropriate value to view calls recorded from the panel in ARI if using a server revision of 1520 or higher.
+        1.0.0 Added backward compatibility support for 2.0 rev 1104.
+              Fixed bug in which a flawed context would prevent orphaned parked calls from ringing back to the parking extension if parked via the panel.
+              Made debug menu always visible.
+              Added server debug menu.
+              Debug logs now show on main module page.
+              Multiple debug options can now be set at once.
+              Added database column checks in installation script to handle module upgrades.
+              Added default FreePBX page context to configuration.
+              Added admin username and password fields to the main module page.
+              Added originate timeout field to main module page.
+              Added auto reload and enable page status checkboxes to main module page.
+              Added global Jabber connection configuration fields on main module page.
+              Added email and cell phone fields to extension page.
+              Added Jabber connection configuration override fields to extension page.
+              Added Jabber username and password fields to extension page.
+              Added auto answer checkbox to extension page.
+              Modified database debug tables to account for new tables and columns.
+        0.9.2 Added running time improvements.
+              Module now always puts server in FreePBX Device User Mode for dynamic queue login consistency.
+        0.9.1 Fixed bug where if an extension was removed from a profile then it would not be added back on reload of configuration.
+        0.9 Added modifications to support the new 2.1 custom contexts.
+            Added check for agent extension property as it no longer exists in 2.1.
+        0.8 Fixed bug in which some FreePBX versions would display a blank page during an action process due to a early modified header caused by blank lines in the core function file.
+        0.7 Added back end database to handle state for extensions/users, profiles queues and conference rooms.
+            Added checkboxes to relevant pages to specify which extensions/users, profiles, queues, and conference rooms should be displayed in iSymphony.
+            Added password field on the extension/user page to specify profile passwords.
+            Added iSymphony sever process state and version display on the FreePBX iSymphony page.
+            Added the ability to reload the iSymphony server from the FreePBX iSymphony page.
+            Added license information display on the FreePBX iSymphony page.
+            Added the ability to activate a license via the FreePBX iSymphony page.
+            Added module debug options to the FreePBX iSymphony page.
+            Added support for Device User Mode configuration while using iSymphony 2.1.
+            Modified description and setup instructions on the FreePBX iSymphony page.
+        0.6 Added support for PHP4 in library.
+        0.5 Modified core module code to be more efficient.
+            Removed disconnect call from post reload script.
+        0.4 Added bash script wrapper for post reload script(See new config instructions under the iSymphony menu item).
+        0.3 Added checks for dependent module API functions(manager, queue, conferences)
+        0.2 Added reload script to reload iSymphony config after dial plan reload.
+            Added menu item and info page.
+        0.1 First Release
+	</changelog>
+	<info>http://www.getisymphony.com</info>
+</module>
+
