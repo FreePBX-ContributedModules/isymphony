@@ -16,8 +16,8 @@
 	<depends>
 		<version>>=2.3.0</version>
 	</depends>
-	<location>release/2.11/isymphony-1.4.8.tgz</location>
-	<md5sum>b3f142642bcde5f8c5be6f9a09158578</md5sum>
+	<location>release/2.11/isymphony-1.4.9.tgz</location>
+	<md5sum>3b1da1d2be4d22ba581e946528156fdc</md5sum>
 	<changelog>
 		1.4.9 Fix client launch menu item and remain backwards compatible
 		1.4.8 Added client launch menu item to administration menu.
