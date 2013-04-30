@@ -8,9 +8,9 @@
  *Purpose      : Remove iSymphony tables and manager include
  *Copyright    : 2008 HEHE Enterprises, LLC
  */
- 
+
 global $db, $amp_conf;
- 
+
 //Retore operator panel web root to default
 if(class_exists("freepbx_conf")) {
 	echo "Restoring operator panel web root to default....<br>";
@@ -22,6 +22,7 @@ if(class_exists("freepbx_conf")) {
 //Remove client forward symlink
 echo "Removing client symlink....<br>";
 unlink($amp_conf['AMPWEBROOT'] . '/isymphony');
+unlink($amp_conf['AMPWEBROOT'] . '/admin/isymphony');
 
 //Drop location table
 $query = "DROP TABLE IF EXISTS isymphony_location";
@@ -29,8 +30,8 @@ echo "Removing \"isymphony_location\" Table....<br>";
 $results = $db->query($query);
 if(DB::IsError($results)) {
 	echo "ERROR: could not remove table.<br>";
-} 
- 
+}
+
 //Drop users table
 $query = "DROP TABLE IF EXISTS isymphony_users";
 echo "Removing \"isymphony_users\" Table....<br>";

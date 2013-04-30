@@ -20,7 +20,7 @@ class isymphony_column {
 	var $freePBXKey = "";
 	var $isUnique = false;
 	var $isNotNull = false;
-	
+
 	function isymphony_column($nameVal, $typeVal, $defaultValueVal, $freePBXKeyVal, $isUniqueVal, $isNotNullVal) {
 		$this->name = $nameVal;
 		$this->type = $typeVal;
@@ -36,7 +36,7 @@ class isymphony_table {
 
 	var $name = "";
 	var $columns = array();
-	
+
 	function isymphony_table($nameVal, $columnsVal) {
 		$this->name = $nameVal;
 		$this->columns = $columnsVal;
@@ -51,11 +51,11 @@ class isymphony_table_builder {
 	function isymphony_table_builder($tableVal) {
 		$this->table = $tableVal;
 	}
-	
+
 	function build($entries) {
-		
+
 		echo "Creating \"" . $this->table->name . "\" Table....<br>";
-		
+
 		if($this->createTableIfItDoesNotExist()) {
 			echo "Populating(New) \"" . $this->table->name. "\"....<br>";
 			$this->populateTableNew($entries);
@@ -69,113 +69,113 @@ class isymphony_table_builder {
 		}
 		echo "Done<br>";
 	}
-	
+
 	function createTableIfItDoesNotExist() {
-		
+
 		global $db;
-		
+
 		//Build query to create table if it does not exists
 		$query = "CREATE TABLE " . $this->table->name . "(";
-		
-		foreach($this->table->columns as $column) {			
+
+		foreach($this->table->columns as $column) {
 			$query .= $this->buildColumnEntry($column) . ",";
 		}
-		
+
 		$query = substr_replace($query, "", -1);
 		$query .= ")";
-		
+
 		$result = $db->query($query);
 		if(DB::IsError($result)) {
-			
+
 			if($result->getCode() != DB_ERROR_ALREADY_EXISTS) {
-				die_freepbx($result->getDebugInfo()); 
+				die_freepbx($result->getDebugInfo());
 			}
-			
+
 			return false;
 		}
-		 
+
 		return true;
 	}
-	
+
 	function upgradeTableColumns() {
-	
+
 		global $db;
-		
+
 		$addedColumns = array();
-		
+
 		//Insert any missing columns
 		foreach($this->table->columns as $column) {
 			$query = "SELECT $column->name FROM " . $this->table->name;
 			$check = $db->getRow($query, DB_FETCHMODE_ASSOC);
-			
+
 			if(DB::IsError($check)) {
 		    	$query = "ALTER TABLE " . $this->table->name . " ADD " . $this->buildColumnEntry($column);
 		    	$result = $db->query($query);
-		    	
-		    	if(DB::IsError($result)) { 
-		    		die_freepbx($result->getDebugInfo()); 
+
+		    	if(DB::IsError($result)) {
+		    		die_freepbx($result->getDebugInfo());
 		    	} else {
 		    		array_push($addedColumns, $column);
 		    	}
 			}
 		}
-		
+
 		return $addedColumns;
 	}
-	
+
 	function populateTableNew($entries) {
 
-		global $db;		
-		
+		global $db;
+
 		//Populate a newly created table
 		foreach($entries as $entry) {
-			
+
 			$queryKeys = "";
 			$queryValues = "";
 			$queryValueArray = array();
-			
+
 			foreach($this->table->columns as $column) {
 				$queryKeys .= $column->name . ",";
 				$queryValues .= "?,";
 				$freePBXKey = $column->freePBXKey;
-				
+
 				if($freePBXKey != "") {
 					array_push($queryValueArray,  $entry[$freePBXKey]);
 				} else {
 					array_push($queryValueArray,  $column->defaultValue);
 				}
 			}
-			
+
 			$queryKeys = substr_replace($queryKeys, "", -1);
 			$queryValues = substr_replace($queryValues, "", -1);
-		
+
 			$query = $db->prepare("INSERT INTO " . $this->table->name . " (" . $queryKeys . ") VALUES (" . $queryValues . ")");
 			$result = $db->execute($query, $queryValueArray);
-			if(DB::IsError($result)) { 
+			if(DB::IsError($result)) {
 				die_freepbx($result->getDebugInfo());
-			}	
+			}
 		}
 	}
-	
+
 	function populateTableUpgrade($addedColumns) {
-		
-		global $db;		
-		
+
+		global $db;
+
 		//Upgrade a table
 		foreach($addedColumns as $column) {
 			$query = $db->prepare("UPDATE " . $this->table->name . " SET " . $column->name . " = ?");
 			$result = $db->execute($query, array($column->defaultValue));
-			if(DB::IsError($result)) { 
+			if(DB::IsError($result)) {
 				die_freepbx($result->getDebugInfo());
-			}	
+			}
 		}
 	}
-	
+
 	function buildColumnEntry($column) {
-	
+
 		$columnEntry = $column->name;
 		$modifierEntry = ($column->isUnique ? " UNIQUE" : "") . ($column->isNotNull ? " NOT NULL" : "");
-		
+
 		switch ($column->type) {
 			case "primary":
 		        $columnEntry .= " INT NOT NULL AUTO_INCREMENT PRIMARY KEY";
@@ -189,8 +189,8 @@ class isymphony_table_builder {
 		    case "boolean":
 		        $columnEntry .= "  INTEGER(1)" . $modifierEntry;
 		        break;
-		}	
-	
+		}
+
 		return $columnEntry;
 	}
 }
@@ -210,8 +210,13 @@ if(file_exists($amp_conf['AMPWEBROOT'] . '/isymphony')) {
 	unlink($amp_conf['AMPWEBROOT'] . '/isymphony');
 }
 symlink($amp_conf['AMPWEBROOT'] .'/admin/modules/isymphony/', $amp_conf['AMPWEBROOT'] . '/isymphony');
+
+if(file_exists($amp_conf['AMPWEBROOT'] . '/admin/isymphony')) {
+	unlink($amp_conf['AMPWEBROOT'] . '/isymphony');
+}
+symlink($amp_conf['AMPWEBROOT'] .'/admin/modules/isymphony/', $amp_conf['AMPWEBROOT'] . '/admin/isymphony');
 echo "Done<br>";
-	
+
 //Build location table
 $columns = array(	new isymphony_column("admin_user_name", "string", "admin", "", false, false),
 					new isymphony_column("admin_password", "string", "secret", "", false, false),
@@ -228,7 +233,7 @@ $columns = array(	new isymphony_column("admin_user_name", "string", "admin", "",
 					new isymphony_column("isymphony_tenant", "string", "default", "", false, false),
 					new isymphony_column("isymphony_client_port", "integer", 50003, "", false, false),
 					new isymphony_column("asterisk_host", "string", "localhost", "", false, false));
-					
+
 $table = new isymphony_table("isymphony_location", $columns);
 $builder = new isymphony_table_builder($table);
 $builder->build(array(array("junk")));
@@ -267,7 +272,7 @@ if((function_exists("core_users_list")) && (($freePBXUsers = core_users_list()) 
 	}
 }
 
-$builder->build($entries);					
+$builder->build($entries);
 
 //Build queues table
 $columns = array(	new isymphony_column("isymphony_queue_id", "primary", "", "", true, true),
