@@ -1,7 +1,7 @@
 <module>
 	<rawname>isymphony</rawname>
 	<name>iSymphony</name>
-	<version>1.4.8</version>
+	<version>1.4.9</version>
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<license>GPL</license>
@@ -19,6 +19,7 @@
 	<location>release/2.11/isymphony-1.4.8.tgz</location>
 	<md5sum>b3f142642bcde5f8c5be6f9a09158578</md5sum>
 	<changelog>
+		1.4.9 Fix client launch menu item and remain backwards compatible
 		1.4.8 Added client launch menu item to administration menu.
 		1.4.7 Module now configures the server to perform originations through a proxy context in order to strip the CC_RECALL variable from the destination leg of the call.
 		1.4.6 FreePBX config object is now pulled from the create method.
