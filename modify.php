@@ -160,6 +160,7 @@ if(($iSymphonyLocations = $isymphony->getISymphonyLocationList()) !== false) {
 		$object->reload_on_dial_plan_reload = $maskedAutoReloadFlag;
 		$object->force_client_update = "true";
 		$object->voice_mail_directory = "/var/spool/asterisk/voicemail";
+		$object->conf_bridge = ($amp_conf['ASTCONFAPP'] == 'app_confbridge') ? "true" : "false";
 		
 		if($object->add()) {
 			isymphony_modify_write_to_file($debugLogFile, "Added location default\n");
@@ -184,6 +185,7 @@ if(($iSymphonyLocations = $isymphony->getISymphonyLocationList()) !== false) {
 				$object->log_jabber_messages = $maskedLogJabberMessagesFlag;
 				$object->device_user_mode = "true";
 				$object->reload_on_dial_plan_reload = $maskedAutoReloadFlag;
+				$object->conf_bridge = ($amp_conf['ASTCONFAPP'] == 'app_confbridge') ? "true" : "false";
 				
 				if($object->update()) {
 					isymphony_modify_write_to_file($debugLogFile, "Updated location default\n");
@@ -688,8 +690,25 @@ function isymphony_modify_conference_room_list() {
 //Update checks
 function isymphony_modify_location_update_check($serverRevision, $databaseValues, $maskedAutoReloadFlag, $maskedLogJabberMessagesFlag, $object) {
 	
-	//Checks for revision 1736 and above
-	if($serverRevision >= 1736) {
+	//Checks fo revision 4295 and above
+	if($serverRevision >= 4295) {
+		$conf_bridge = ($amp_conf['ASTCONFAPP'] == 'app_confbridge') ? "true" : "false";
+		return (($object->asterisk_host != "localhost") ||
+		($object->asterisk_port != "5038") ||
+		($object->asterisk_login != "isymphony") ||
+		($object->asterisk_password != "ismanager*con") ||
+		($object->originate_timeout != $databaseValues["originate_timeout"]) ||
+		($object->reload_on_dial_plan_reload != $maskedAutoReloadFlag) ||
+		($object->jabber_host != $databaseValues["jabber_host"]) ||
+		($object->jabber_domain != $databaseValues["jabber_domain"]) ||
+		($object->jabber_resource != $databaseValues["jabber_resource"]) ||
+		($object->jabber_port != $databaseValues["jabber_port"]) ||
+		($object->device_user_mode != "true") ||
+		($object->log_jabber_messages != $maskedLogJabberMessagesFlag) ||
+		($object->conf_bridge != $conf_bridge));
+	
+	//Checks for revision 1736 and 4294
+	} else if($serverRevision >= 1736) {
 			return (($object->asterisk_host != "localhost") || 
 			($object->asterisk_port != "5038") || 
 			($object->asterisk_login != "isymphony") || 

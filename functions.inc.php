@@ -212,11 +212,19 @@ function isymphony_get_config($engine) {
 			    $ext->add($id, $c, '', new ext_vm("\${{$variablePrefix}VoiceMailBox}@\${{$variablePrefix}VoiceMailBoxContext},u"));
 			    $ext->add($id, $c, '', new ext_hangup());
 			    
-			    $id = $contextPrefix . "-meetme";
-			    $c = '432113';
-			    $ext->add($id, $c, '', new ext_meetme("\${{$variablePrefix}MeetMeRoomNumber}", "\${{$variablePrefix}MeetMeRoomOptions}", ""));
-			    $ext->add($id, $c, '', new ext_hangup());
-			    			    
+			    //Check if we are using confbridge or meetme
+			    if ($amp_conf['ASTCONFAPP'] == 'app_confbridge') {
+			    	$id = $contextPrefix . "-confbridge";
+			    	$c = '432113';
+			    	$ext->add($id, $c, '', new ext_meetme("\${{$variablePrefix}MeetMeRoomNumber}");
+			    	$ext->add($id, $c, '', new ext_hangup());
+			    } else {
+			    	$id = $contextPrefix . "-meetme";
+			    	$c = '432113';
+			    	$ext->add($id, $c, '', new ext_meetme("\${{$variablePrefix}MeetMeRoomNumber}", "\${{$variablePrefix}MeetMeRoomOptions}", ""));
+			    	$ext->add($id, $c, '', new ext_hangup());
+			    }
+			    			    			    
 			    $id = $contextPrefix . "-park";
 			    $c = '432114';
 			    $ext->add($id, $c, '', new ext_isymphony_parkandannounce("pbx-transfer:PARKED", "$parkingTimeout", "Local/432116@" . $contextPrefix . "-park-announce-answer", "\${{$variablePrefix}ParkContext},\${{$variablePrefix}ParkExtension},1"));

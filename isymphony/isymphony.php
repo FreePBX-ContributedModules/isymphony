@@ -69,8 +69,12 @@ class iSymphony{
 			//Check version and revision number to modify property arrays if necessary
 			if((($versionResult = self::getiSymphonyServerVersion()) !== false) && (($revisionResult = self::getiSymphonyServerRevision()) !== false)) {
 			
+				//Modify for rev 4295
+				if($revisionResult >= 4295) {
+					self::isymphony_modify_property_arrays_2_8_4295();
+					
 				//Modify for rev 2257
-				if($revisionResult >= 2257) {
+				} else if($revisionResult >= 2257) {
 					self::isymphony_modify_property_arrays_2_2_2257();
 				
 				//Modify for rev 2205 through 2256
@@ -3149,6 +3153,14 @@ class iSymphony{
 
            	array_push(self::$remotePermissionPropertyArray, "do_not_disturb");
            	array_push(self::$localPermissionPropertyArray, "do_not_disturb");
+        }
+        static function isymphony_modify_property_arrays_2_8_4295() {
+        
+        	//Apply 2.2 2257 modifications
+        	self::isymphony_modify_property_arrays_2_2_2257();
+        
+        	//New modifications
+        	array_push(self::$locationPropertyArray, "conf_bridge");
         }
 		static function getconf($filename) {
 		  $file = file($filename);

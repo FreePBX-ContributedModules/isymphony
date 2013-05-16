@@ -143,6 +143,7 @@ require_once(dirname(__FILE__) . '/isymphony.php');
 	var $voice_mail_agent_port = null;
 	var $voice_mail_agent_user_name = null;
 	var $voice_mail_agent_password = null;
+	var $conf_bridge = null;
 	
  	//Methods
  	function update() {
