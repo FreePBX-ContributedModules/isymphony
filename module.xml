@@ -14,8 +14,8 @@
 	<depends>
 		<version>>=2.3.0</version>
 	</depends>
-	<location>junk</location>
-	<md5sum>junk</md5sum>
+	<location>release/2.11/isymphony-1.4.9.tgz</location>
+	<md5sum>0a080fff3565ff73682323f0206e7751</md5sum>
 	<changelog>
 		1.4.9 Added support for conf bridge.
 		1.4.8 Added client launch menu item to administration menu.
