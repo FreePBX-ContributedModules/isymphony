@@ -15,7 +15,7 @@
 		<version>>=2.3.0</version>
 	</depends>
 	<location>release/2.11/isymphony-1.4.9.1.tgz</location>
-	<md5sum>d20bd43cee7bd2ac4a64ce52f89fcba8</md5sum>
+	<md5sum>073ef2db07fd7a8d8fdf58b3e2ee1e75</md5sum>
 	<changelog>
 		1.4.9.1 Fix symlink issue
 		1.4.9 Added support for conf bridge.
