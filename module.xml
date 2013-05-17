@@ -1,7 +1,7 @@
 <module>
 	<rawname>isymphony</rawname>
 	<name>iSymphony</name>
-	<version>1.4.9</version>
+	<version>1.4.9.1</version>
 	<type>setup</type>
 	<category>Admin</category>
 	<description>
@@ -17,6 +17,7 @@
 	<location>release/2.11/isymphony-1.4.9.tgz</location>
 	<md5sum>0a080fff3565ff73682323f0206e7751</md5sum>
 	<changelog>
+		1.4.9.1 Fix symlink issue
 		1.4.9 Added support for conf bridge.
 		1.4.8 Added client launch menu item to administration menu.
 		1.4.7 Module now configures the server to perform originations through a proxy context in order to strip the CC_RECALL variable from the destination leg of the call.

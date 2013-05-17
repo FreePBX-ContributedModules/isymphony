@@ -210,6 +210,11 @@ if(file_exists($amp_conf['AMPWEBROOT'] . '/isymphony')) {
 	unlink($amp_conf['AMPWEBROOT'] . '/isymphony');
 }
 symlink($amp_conf['AMPWEBROOT'] .'/admin/modules/isymphony/', $amp_conf['AMPWEBROOT'] . '/isymphony');
+
+if(file_exists($amp_conf['AMPWEBROOT'] . '/admin/isymphony')) {
+        unlink($amp_conf['AMPWEBROOT'] . '/admin/isymphony');
+        }
+        symlink($amp_conf['AMPWEBROOT'] .'/admin/modules/isymphony/', $amp_conf['AMPWEBROOT'] . '/admin/isymphony');
 echo "Done<br>";
 	
 //Build location table
