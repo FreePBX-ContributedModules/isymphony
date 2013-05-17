@@ -216,7 +216,7 @@ function isymphony_get_config($engine) {
 			    if ($amp_conf['ASTCONFAPP'] == 'app_confbridge') {
 			    	$id = $contextPrefix . "-confbridge";
 			    	$c = '432113';
-			    	$ext->add($id, $c, '', new ext_meetme("\${{$variablePrefix}MeetMeRoomNumber}");
+			    	$ext->add($id, $c, '', new ext_meetme("\${{$variablePrefix}MeetMeRoomNumber}"));
 			    	$ext->add($id, $c, '', new ext_hangup());
 			    } else {
 			    	$id = $contextPrefix . "-meetme";
