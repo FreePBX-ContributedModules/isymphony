@@ -1,7 +1,7 @@
 <module>
 	<rawname>isymphony</rawname>
 	<name>iSymphony</name>
-	<version>1.4.9.1</version>
+	<version>1.4.9.2</version>
 	<type>setup</type>
 	<category>Admin</category>
 	<description>
@@ -17,6 +17,7 @@
 	<location>release/2.11/isymphony-1.4.9.1.tgz</location>
 	<md5sum>073ef2db07fd7a8d8fdf58b3e2ee1e75</md5sum>
 	<changelog>
+		1.4.9.2 Fix typo in uninstall of admin symlink
 		1.4.9.1 Fix symlink issue
 		1.4.9 Added support for conf bridge.
 		1.4.8 Added client launch menu item to administration menu.

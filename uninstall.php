@@ -22,7 +22,7 @@ if(class_exists("freepbx_conf")) {
 //Remove client forward symlink
 echo "Removing client symlink....<br>";
 unlink($amp_conf['AMPWEBROOT'] . '/isymphony');
-unliunk($amp_conf['AMPWEBROOT'] . '/admin/isymphony');
+unlink($amp_conf['AMPWEBROOT'] . '/admin/isymphony');
 
 //Drop location table
 $query = "DROP TABLE IF EXISTS isymphony_location";
