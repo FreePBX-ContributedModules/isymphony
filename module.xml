@@ -1,7 +1,7 @@
 <module>
 	<rawname>isymphony</rawname>
 	<name>iSymphony</name>
-	<version>1.4.9.2</version>
+	<version>1.4.9.3</version>
 	<type>setup</type>
 	<category>Admin</category>
 	<description>
@@ -12,11 +12,12 @@
 		<isymphony_menu category="reports" requires_auth="false" target="_blank" access="all">iSymphony Panel</isymphony_menu>
 	</menuitems>
 	<depends>
-		<version>>=2.3.0</version>
+		<version>&gt;=2.3.0</version>
 	</depends>
 	<location>release/2.11/isymphony-1.4.9.2.tgz</location>
 	<md5sum>f6365c4ff08a935f2049b3ec50946d57</md5sum>
 	<changelog>
+		*1.4.9.3* Packaging of ver 1.4.9.3
 		1.4.9.2 Fix typo in uninstall of admin symlink
 		1.4.9.1 Fix symlink issue
 		1.4.9 Added support for conf bridge.
@@ -104,11 +105,10 @@
         0.3 Added checks for dependent module API functions(manager, queue, conferences)
         0.2 Added reload script to reload iSymphony config after dial plan reload.
             Added menu item and info page.
-        0.1 First Release	
+        0.1 First Release
 	</changelog>
 	<supported>
 		<version>2.10</version>
 	</supported>
 	<info>http://www.getisymphony.com</info>
 </module>
-
