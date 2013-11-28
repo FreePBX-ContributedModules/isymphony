@@ -106,6 +106,9 @@
             Added menu item and info page.
         0.1 First Release	
 	</changelog>
+	<supported>
+		<version>2.10</version>
+	</supported>
 	<info>http://www.getisymphony.com</info>
 </module>
 
