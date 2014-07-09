@@ -1,6 +1,0 @@
-Server Version:XactView v2.2.0 rev 2227 Server Revision:2227
-Using 2.1 contexts
-Using context prefix "c-x-operator-panel"
-Using variable prefix "XMLNamespace"
-Using hint agent interface
-Total Running Time:1.5186049938202s
