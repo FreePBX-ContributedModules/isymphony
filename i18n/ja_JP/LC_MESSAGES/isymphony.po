@@ -2,7 +2,7 @@
 # ================================
 # Current translation & maintenance: QLOOG, Inc. (Kobe, Japan)
 # Inquiries: info@qloog.com / www.qloog.com
-# 
+#
 # This translation is a culmination of the hard work of
 # several outstanding individuals, which started in 2009 with the 
 # first-ever Japanese localization of FreePBX by Kenichi Fukaumi 
@@ -14,7 +14,7 @@
 # of course, released under the same GPLv2 license as FreePBX. 
 # We only ask that you kindly retain these credits in honor of 
 # the time and effort that all of us have contributed. Enjoy!
-# 
+#
 # This file is part of FreePBX.
 #
 #    FreePBX is free software: you can redistribute it and/or modify
@@ -37,74 +37,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-05 19:32+0900\n"
+"POT-Creation-Date: 2015-03-24 14:44-0400\n"
 "PO-Revision-Date: 2014-05-28 14:15+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese "
-"<http://git.freepbx.org/projects/freepbx/isymphony/ja/>\n"
-"Language: ja_JP\n"
+"Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/isymphony/"
+"ja/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 1.9-dev\n"
 
-msgid "Reload"
-msgstr "リロード"
-
 msgid "Activate"
 msgstr "アクティベート"
-
-msgid "iSymphony"
-msgstr "iSymphony"
-
-msgid "Server"
-msgstr "サーバー"
-
-msgid "Status:"
-msgstr "ステータス："
-
-msgid "Displays if the iSymphony server is running."
-msgstr "iSymphonyサーバーが起動しているかどうか表示します。"
-
-msgid "Version:"
-msgstr "バージョン："
-
-msgid "Displays the version of the iSymphony server."
-msgstr "iSymphonyサーバーのバージョンを表示します。"
-
-msgid "Reload Server:"
-msgstr "サーバーをリロード"
-
-msgid "Reloads the iSymphony server."
-msgstr "iSymphonyサーバーをリロードします。"
-
-msgid "License"
-msgstr "ライセンス"
-
-msgid "Licensed To:"
-msgstr "ライセンス取得者："
-
-msgid "Displays the name of the person or company this server is licensed to."
-msgstr "このサーバーのライセンスを取得した人、または会社の名前を表示します。"
-
-msgid "Trial Days:"
-msgstr "トライアル残り日数"
-
-msgid "Displays the number of remaining license trial days."
-msgstr "トライアルライセンスの残りの日数を表示します。"
-
-msgid "Clients:"
-msgstr "クライアント："
-
-msgid "Displays the number of licensed clients."
-msgstr "現在のライセンスで利用できるクライアントの総数を表示します。"
-
-msgid "Queues:"
-msgstr "キュー："
-
-msgid "Displays the number of licensed queues."
-msgstr "現在のライセンスで利用できるキューの総数を表示します。"
 
 msgid "Activate:"
 msgstr "アクティベート："
@@ -112,31 +58,154 @@ msgstr "アクティベート："
 msgid "Activates a license with a given serial key."
 msgstr "入力されたシリアルキーでアクティベーションを行います。"
 
-msgid "Server Settings"
-msgstr "サーバー設定"
+msgid "Add to iSymphony"
+msgstr "iSymphonyに追加"
 
-msgid "Admin User Name"
-msgstr "管理者ユーザー名"
-
-msgid "User name used to login to the administration section in the panel."
-msgstr "iSymphonyパネルの管理画面にログインする際に使うユーザー名。"
+msgid "Admin"
+msgstr "アドミン"
 
 msgid "Admin Password:"
 msgstr "管理者パスワード"
 
-msgid "Password used to login to the administration section in the panel."
-msgstr "iSymphonyパネルの管理画面にログインする際に使うパスワード。"
+msgid "Admin User Name"
+msgstr "管理者ユーザー名"
 
-msgid "Originate Timeout:"
-msgstr "発信元タイムアウト："
+msgid "Asterisk Server Host:"
+msgstr "Asteriskサーバーホスト："
+
+msgid "Auto Reload:"
+msgstr "自動リロード："
+
+msgid "Client Port:"
+msgstr "クライアントポート："
+
+msgid "Clients:"
+msgstr "クライアント："
+
+msgid "Displays if the iSymphony server is running."
+msgstr "iSymphonyサーバーが起動しているかどうか表示します。"
+
+msgid "Displays the name of the person or company this server is licensed to."
+msgstr "このサーバーのライセンスを取得した人、または会社の名前を表示します。"
+
+msgid "Displays the number of licensed clients."
+msgstr "現在のライセンスで利用できるクライアントの総数を表示します。"
+
+msgid "Displays the number of licensed queues."
+msgstr "現在のライセンスで利用できるキューの総数を表示します。"
+
+msgid "Displays the number of remaining license trial days."
+msgstr "トライアルライセンスの残りの日数を表示します。"
+
+msgid "Displays the version of the iSymphony server."
+msgstr "iSymphonyサーバーのバージョンを表示します。"
+
+msgid "Domain:"
+msgstr "ドメイン："
+
+msgid "Enable Page Status:"
+msgstr "ページングステータスを有効："
+
+msgid "Global Jabber Settings"
+msgstr "グローバルJabber設定"
+
+msgid "Host:"
+msgstr "ホスト："
+
+msgid "IP Address or FQDN of iSymphony Server"
+msgstr "iSymphonyサーバーのIPアドレス、またはFQDN"
+
+msgid "IP Address or FQDN of your Asterisk Server"
+msgstr "AsteriskサーバーのIPアドレス、またはFQDN。"
+
+msgid "If checked allows you to see paging status on extensions in the panel."
+msgstr "チェックを入れると、パネルで各内線のページングステータスを表示します。"
+
+msgid ""
+"Jabber domain to be used unless otherwise overridden by the extension "
+"settings."
+msgstr "使用するJabberドメイン。内線の設定によって上書きされる場合があります。"
+
+msgid ""
+"Jabber host to be used unless otherwise overridden by the extension settings."
+msgstr "使用するJabberホスト。内線の設定によって上書きされる場合があります。"
+
+msgid ""
+"Jabber port to be used unless otherwise overridden by the extension settings."
+msgstr "使用するJabberポート。内線の設定によって上書きされる場合があります。"
+
+msgid ""
+"Jabber resource to be used unless otherwise overridden by the extension "
+"settings."
+msgstr "使用するJabberリソース。内線の設定によって上書きされる場合があります。"
+
+msgid "License"
+msgstr "ライセンス"
+
+msgid "Licensed To:"
+msgstr "ライセンス取得者："
+
+msgid "Location:"
+msgstr "ロケーション："
+
+msgid "Log Messages:"
+msgstr "ログメッセージ："
+
+msgid "Makes this conference room available in iSymphony"
+msgstr "この会議室をiSymphonyで利用できるようにします。"
+
+msgid "Makes this queue available in iSymphony"
+msgstr "このキューをiSymphonyで利用できるようにします。"
+
+msgid "Module Debug"
+msgstr "モジュールデバッグ"
 
 msgid ""
 "Number of milliseconds that the originating extension will be rung when "
 "placing a call via the panel before timing out."
 msgstr "発信する際に、タイムアウトまで通話相手の電話を鳴らす時間（ms）。"
 
-msgid "Auto Reload:"
-msgstr "自動リロード："
+msgid "Originate Timeout:"
+msgstr "発信元タイムアウト："
+
+msgid "Password used to login to the administration section in the panel."
+msgstr "iSymphonyパネルの管理画面にログインする際に使うパスワード。"
+
+msgid "Port:"
+msgstr "ポート："
+
+msgid "Queues:"
+msgstr "キュー："
+
+msgid "Reload"
+msgstr "リロード"
+
+msgid "Reload Server:"
+msgstr "サーバーをリロード"
+
+msgid "Reloads the iSymphony server."
+msgstr "iSymphonyサーバーをリロードします。"
+
+msgid "Resource:"
+msgstr "リソース："
+
+msgid "Server"
+msgstr "サーバー"
+
+msgid "Server Debug"
+msgstr "サーバーデバッグ"
+
+msgid "Server Settings"
+msgstr "サーバー設定"
+
+msgid "Sets the port on the server that serves the client files."
+msgstr "サーバーでクライントファイルを提供するポートを設定します。"
+
+msgid "Status:"
+msgstr "ステータス："
+
+msgid "Submit Changes"
+msgstr "変更を適用"
 
 msgid ""
 "Tells the server to automatically reload the location when the dial plan is "
@@ -145,113 +214,11 @@ msgstr ""
 "ダイヤルプランをリロードする際には、ロケーションを自動的にリロードするように"
 "サーバーに要求します。"
 
-msgid "Enable Page Status:"
-msgstr "ページングステータスを有効："
-
-msgid "If checked allows you to see paging status on extensions in the panel."
-msgstr "チェックを入れると、パネルで各内線のページングステータスを表示します。"
-
-msgid "iSymphony Server Host:"
-msgstr "iSymphonyサーバーホスト："
-
-msgid "IP Address or FQDN of iSymphony Server"
-msgstr "iSymphonyサーバーのIPアドレス、またはFQDN"
-
-msgid "Location:"
-msgstr "ロケーション："
-
-msgid "iSymphony Server Location:"
-msgstr "iSymphonyサーバーのロケーション："
-
-msgid "Tenant:"
-msgstr "テナント："
-
-msgid "iSymphonyServer Tenant:"
-msgstr "iSymphonyサーバーのテナント："
-
-msgid "Client Port:"
-msgstr "クライアントポート："
-
-msgid "Sets the port on the server that serves the client files."
-msgstr "サーバーでクライントファイルを提供するポートを設定します。"
-
-msgid "Asterisk Server Host:"
-msgstr "Asteriskサーバーホスト："
-
-msgid "IP Address or FQDN of your Asterisk Server"
-msgstr "AsteriskサーバーのIPアドレス、またはFQDN。"
-
-msgid "Global Jabber Settings"
-msgstr "グローバルJabber設定"
-
-msgid "Host:"
-msgstr "ホスト："
-
-msgid ""
-"Jabber host to be used unless otherwise overridden by the extension settings."
-msgstr "使用するJabberホスト。内線の設定によって上書きされる場合があります。"
-
-msgid "Domain:"
-msgstr "ドメイン："
-
-msgid ""
-"Jabber domain to be used unless otherwise overridden by the extension "
-"settings."
-msgstr "使用するJabberドメイン。内線の設定によって上書きされる場合があります。"
-
-msgid "Resource:"
-msgstr "リソース："
-
-msgid ""
-"Jabber resource to be used unless otherwise overridden by the extension "
-"settings."
-msgstr "使用するJabberリソース。内線の設定によって上書きされる場合があります。"
-
-msgid "Port:"
-msgstr "ポート："
-
-msgid ""
-"Jabber port to be used unless otherwise overridden by the extension settings."
-msgstr "使用するJabberポート。内線の設定によって上書きされる場合があります。"
-
-msgid "Log Messages:"
-msgstr "ログメッセージ："
-
 msgid "Tells the server to log all chat conversations."
 msgstr "すべてのチャットを記録するようにサーバーに要求します。"
 
-msgid "Submit Changes"
-msgstr "変更を適用"
-
-msgid "Module Debug"
-msgstr "モジュールデバッグ"
-
-msgid "View Debug Log"
-msgstr "デバッグログを表示"
-
-msgid "View Error Log"
-msgstr "エラーログを表示"
-
-msgid "View Database"
-msgstr "データベースを表示"
-
-msgid "Server Debug"
-msgstr "サーバーデバッグ"
-
-msgid "View Core Log"
-msgstr "コアログを表示"
-
-msgid "View Communication Log"
-msgstr "コミュニケーションログを表示"
-
-msgid "View AMI External Log"
-msgstr "AMI外部ログを表示"
-
-msgid "View AMI Internal Log"
-msgstr "AMI内部ログを表示"
-
-msgid "Admin"
-msgstr "アドミン"
+msgid "Tenant:"
+msgstr "テナント："
 
 msgid ""
 "This module automatically configures iSymphony to reflect the FreePBX "
@@ -259,11 +226,38 @@ msgid ""
 msgstr ""
 "このモジュールは、FreePBXにおける設定を自動的にiSymphonyに反映させます。"
 
-msgid "iSymphony Panel"
-msgstr "iSymphonyパネル"
+msgid "Trial Days:"
+msgstr "トライアル残り日数"
 
-msgid "iSymphony Profile Settings"
-msgstr "iSymphonyプロフィール設定"
+msgid "User name used to login to the administration section in the panel."
+msgstr "iSymphonyパネルの管理画面にログインする際に使うユーザー名。"
+
+msgid "Version:"
+msgstr "バージョン："
+
+msgid "View AMI External Log"
+msgstr "AMI外部ログを表示"
+
+msgid "View AMI Internal Log"
+msgstr "AMI内部ログを表示"
+
+msgid "View Communication Log"
+msgstr "コミュニケーションログを表示"
+
+msgid "View Core Log"
+msgstr "コアログを表示"
+
+msgid "View Database"
+msgstr "データベースを表示"
+
+msgid "View Debug Log"
+msgstr "デバッグログを表示"
+
+msgid "View Error Log"
+msgstr "エラーログを表示"
+
+msgid "iSymphony"
+msgstr "iSymphony"
 
 msgid "iSymphony Extension Settings"
 msgstr "iSymphony内線設定"
@@ -271,11 +265,20 @@ msgstr "iSymphony内線設定"
 msgid "iSymphony Jabber Settings"
 msgstr "iSymphonyのJabber設定"
 
-msgid "Add to iSymphony"
-msgstr "iSymphonyに追加"
+msgid "iSymphony Panel"
+msgstr "iSymphonyパネル"
 
-msgid "Makes this queue available in iSymphony"
-msgstr "このキューをiSymphonyで利用できるようにします。"
+msgid "iSymphony Profile Settings"
+msgstr "iSymphonyプロフィール設定"
 
-msgid "Makes this conference room available in iSymphony"
-msgstr "この会議室をiSymphonyで利用できるようにします。"
+msgid "iSymphony Server Host:"
+msgstr "iSymphonyサーバーホスト："
+
+msgid "iSymphony Server Location:"
+msgstr "iSymphonyサーバーのロケーション："
+
+msgid "iSymphonyServer Tenant:"
+msgstr "iSymphonyサーバーのテナント："
+
+msgid "reports"
+msgstr ""

@@ -1,0 +1,249 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for isymphony
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-24 14:44-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Activate"
+msgstr ""
+
+msgid "Activate:"
+msgstr ""
+
+msgid "Activates a license with a given serial key."
+msgstr ""
+
+msgid "Add to iSymphony"
+msgstr ""
+
+msgid "Admin"
+msgstr ""
+
+msgid "Admin Password:"
+msgstr ""
+
+msgid "Admin User Name"
+msgstr ""
+
+msgid "Asterisk Server Host:"
+msgstr ""
+
+msgid "Auto Reload:"
+msgstr ""
+
+msgid "Client Port:"
+msgstr ""
+
+msgid "Clients:"
+msgstr ""
+
+msgid "Displays if the iSymphony server is running."
+msgstr ""
+
+msgid "Displays the name of the person or company this server is licensed to."
+msgstr ""
+
+msgid "Displays the number of licensed clients."
+msgstr ""
+
+msgid "Displays the number of licensed queues."
+msgstr ""
+
+msgid "Displays the number of remaining license trial days."
+msgstr ""
+
+msgid "Displays the version of the iSymphony server."
+msgstr ""
+
+msgid "Domain:"
+msgstr ""
+
+msgid "Enable Page Status:"
+msgstr ""
+
+msgid "Global Jabber Settings"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
+
+msgid "IP Address or FQDN of iSymphony Server"
+msgstr ""
+
+msgid "IP Address or FQDN of your Asterisk Server"
+msgstr ""
+
+msgid "If checked allows you to see paging status on extensions in the panel."
+msgstr ""
+
+msgid ""
+"Jabber domain to be used unless otherwise overridden by the extension "
+"settings."
+msgstr ""
+
+msgid ""
+"Jabber host to be used unless otherwise overridden by the extension settings."
+msgstr ""
+
+msgid ""
+"Jabber port to be used unless otherwise overridden by the extension settings."
+msgstr ""
+
+msgid ""
+"Jabber resource to be used unless otherwise overridden by the extension "
+"settings."
+msgstr ""
+
+msgid "License"
+msgstr ""
+
+msgid "Licensed To:"
+msgstr ""
+
+msgid "Location:"
+msgstr ""
+
+msgid "Log Messages:"
+msgstr ""
+
+msgid "Makes this conference room available in iSymphony"
+msgstr ""
+
+msgid "Makes this queue available in iSymphony"
+msgstr ""
+
+msgid "Module Debug"
+msgstr ""
+
+msgid ""
+"Number of milliseconds that the originating extension will be rung when "
+"placing a call via the panel before timing out."
+msgstr ""
+
+msgid "Originate Timeout:"
+msgstr ""
+
+msgid "Password used to login to the administration section in the panel."
+msgstr ""
+
+msgid "Port:"
+msgstr ""
+
+msgid "Queues:"
+msgstr ""
+
+msgid "Reload"
+msgstr ""
+
+msgid "Reload Server:"
+msgstr ""
+
+msgid "Reloads the iSymphony server."
+msgstr ""
+
+msgid "Resource:"
+msgstr ""
+
+msgid "Server"
+msgstr ""
+
+msgid "Server Debug"
+msgstr ""
+
+msgid "Server Settings"
+msgstr ""
+
+msgid "Sets the port on the server that serves the client files."
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Submit Changes"
+msgstr ""
+
+msgid ""
+"Tells the server to automatically reload the location when the dial plan is "
+"reloaded."
+msgstr ""
+
+msgid "Tells the server to log all chat conversations."
+msgstr ""
+
+msgid "Tenant:"
+msgstr ""
+
+msgid ""
+"This module automatically configures iSymphony to reflect the FreePBX "
+"configuration."
+msgstr ""
+
+msgid "Trial Days:"
+msgstr ""
+
+msgid "User name used to login to the administration section in the panel."
+msgstr ""
+
+msgid "Version:"
+msgstr ""
+
+msgid "View AMI External Log"
+msgstr ""
+
+msgid "View AMI Internal Log"
+msgstr ""
+
+msgid "View Communication Log"
+msgstr ""
+
+msgid "View Core Log"
+msgstr ""
+
+msgid "View Database"
+msgstr ""
+
+msgid "View Debug Log"
+msgstr ""
+
+msgid "View Error Log"
+msgstr ""
+
+msgid "iSymphony"
+msgstr ""
+
+msgid "iSymphony Extension Settings"
+msgstr ""
+
+msgid "iSymphony Jabber Settings"
+msgstr ""
+
+msgid "iSymphony Panel"
+msgstr ""
+
+msgid "iSymphony Profile Settings"
+msgstr ""
+
+msgid "iSymphony Server Host:"
+msgstr ""
+
+msgid "iSymphony Server Location:"
+msgstr ""
+
+msgid "iSymphonyServer Tenant:"
+msgstr ""
+
+msgid "reports"
+msgstr ""
